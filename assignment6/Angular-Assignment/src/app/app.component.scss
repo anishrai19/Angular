@@ -1,0 +1,51 @@
+button {
+  margin-right: 3rem;
+}
+
+.badges div {
+  margin: 3rem;
+}
+
+.navbar {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbar span {
+  padding-right: 1rem;
+}
+
+mat-sidenav-container {
+  height: 100px;
+}
+
+mat-sidenav,
+mat-sidenav-content {
+  padding: 16px;
+}
+
+mat-sidenav {
+  background-color: lightcoral;
+  width: 200px;
+}
+
+.menu .center {
+  margin: 10rem;
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid maroon;
+  box-sizing: border-box;
+  height: 100px;
+}
+
+.container {
+  height: 400px;
+}

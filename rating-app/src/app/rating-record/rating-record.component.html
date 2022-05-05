@@ -1,0 +1,119 @@
+<main class="main-container">
+  <form [formGroup]="form" 
+  
+  >
+    <mat-toolbar class="toolbar-content" color="primary">
+      <div class="filters">
+        <mat-form-field class="mat-form-field">
+          <mat-label>Track</mat-label>
+          <mat-select formControlName="track" name="track">
+            <mat-option *ngFor="let track of tracks" [value]="track._id" (click)="fetchFilteredReport()">{{
+              track.name
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        
+      </div>
+
+      <!-- <div>
+        <button mat-raised mat-raised-button color="warm" type="submit">
+          <span>Search</span>
+          <mat-icon>search</mat-icon>
+        </button>
+      </div> -->
+    </mat-toolbar>
+
+    <!-- table -->
+    <div>
+      <mat-card class="tableCard"><h2>Rating Table</h2></mat-card>
+      <table mat-table [dataSource]="tableData" class="table">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.student[0].name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.student[0].email }}
+          </td>
+        </ng-container>
+
+      
+
+        <ng-container matColumnDef="logicRating">
+          <th mat-header-cell *matHeaderCellDef>Logic Rating</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.averages.averageLogicRating }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="communicationRating">
+          <th mat-header-cell *matHeaderCellDef>Communication Rating</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.averages.averageCommunicationRating }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="assignmentsRating">
+          <th mat-header-cell *matHeaderCellDef>Assignment Rating</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.averages.averageAssignmentsRating }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="proactivenessRating">
+          <th mat-header-cell *matHeaderCellDef>Proactiveness Rating</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.averages.averageProactivenessRating }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="averageRating">
+          <th mat-header-cell *matHeaderCellDef>Average Rating</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.averages.averageRating }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="track">
+          <th mat-header-cell *matHeaderCellDef>Track</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.track[0].title }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="updateRating(element._id)"
+              title="Update"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="viewHistory(element.student[0]._id)"
+              [routerLink]="['./details']"
+              title="View History"
+            >
+              <mat-icon>history</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+      </table>
+      
+    </div>
+  </form>
+</main>

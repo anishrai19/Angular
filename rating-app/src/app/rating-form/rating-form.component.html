@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="logout">
+    <button mat-raised-button type="submit" color="primary" (click)="logout()">
+      Log-out
+    </button>
+  </div>
+  <main class="mainContainer">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mainForm">
+      <mat-card class="mainCard">
+        <h2 class="form-title">Evaluation Form</h2>
+
+        <mat-form-field appearance="fill" class="mat-form-field">
+          <mat-label>Name</mat-label>
+          <mat-select formControlName="studentId">
+            <mat-option *ngFor="let name of names" [value]="name._id">{{
+              name.name
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" class="mat-form-field">
+          <mat-label>Track</mat-label>
+          <mat-select formControlName="track">
+            <mat-option *ngFor="let track of tracks" [value]="track._id">{{
+              track.name
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="mat-form-field">
+          <mat-label>Trainer Assigned</mat-label>
+          <mat-select multiple="true" formControlName="trainersAssigned">
+            <mat-option *ngFor="let trainer of trainers" [value]="trainer._id">
+              {{ trainer.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="ratingContainer">
+          <h2>Ratings</h2>
+          <mat-form-field appearance="fill" class="mat-form-field">
+            <mat-label>Logic Rating</mat-label>
+            <input type="number" matInput formControlName="LogicRating" />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="mat-form-field">
+            <mat-label>Communication Rating</mat-label>
+            <input
+              type="number"
+              matInput
+              formControlName="CommunicationRating"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="mat-form-field">
+            <mat-label>Assignment Rating</mat-label>
+            <input type="number" matInput formControlName="AssignmentRating" />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="mat-form-field">
+            <mat-label>ProActiveness Rating</mat-label>
+            <input
+              type="number"
+              matInput
+              formControlName="ProActivenessRating"
+            />
+          </mat-form-field>
+        </div>
+
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          style="margin-top: 1rem"
+          [disabled]="form.invalid"
+        >
+          Submit
+        </button>
+      </mat-card>
+    </form>
+  </main>
+</div>

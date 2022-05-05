@@ -1,0 +1,65 @@
+<div class="main">
+<mat-toolbar color="warn" class="header">
+  <span>Create Employee</span>
+</mat-toolbar>
+<div class="main-container">
+  <div class="logout">
+      <button mat-raised-button type="submit" color="primary"(click)="logout()">Log-out</button>
+     </div>
+
+<div class="container">
+    
+  <mat-card class="employeeForm">
+     
+    <h2>Employee Creation Form</h2>
+    
+    <!-- <mat-toolbar color="primary"></mat-toolbar> -->
+    <form
+      class="createEmp-form"
+      fxLayout="column"
+      [formGroup]="createEmpForm"
+      (ngSubmit)="onSubmitForm()"
+    >
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="xyz" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="xyz@gmail.com" formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role" >
+          <mat-option *ngFor="let role of roles" [value]="role._id">
+            {{ role.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- <div class="radio">
+        <h3>Shift</h3>
+        <mat-radio-group formControlName="shift">
+          <mat-radio-button value="Day" name="shift"> Day</mat-radio-button>
+          <mat-radio-button value="Night" name="shift" > Night</mat-radio-button>
+        </mat-radio-group>
+      </div> -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Shift</mat-label>
+        <mat-select multiple formControlName="shift" >
+          <mat-option *ngFor="let role of shift" [value]="role._id">
+            {{ role.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+     
+      <button mat-raised-button type="submit" [disabled]="createEmpForm.invalid">Create Employee</button>
+    </form>
+  </mat-card>
+</div>
+</div>
+</div>

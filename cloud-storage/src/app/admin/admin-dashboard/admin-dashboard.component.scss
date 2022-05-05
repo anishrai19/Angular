@@ -1,0 +1,117 @@
+th,
+tr {
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    // border-style: inset;
+}
+
+.table {
+    width: 99%;
+    margin-top: 2rem;
+    margin-left: 5px;
+    border-collapse: collapse;
+    border: 1px solid black;
+
+    .table__caption {
+        margin: 0.5rem 0.5rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .table__data-row {
+        .table__data-row__arrow-button {
+            outline: none;
+            border: none;
+            font-size: large;
+
+            &:hover {
+                background-color: rgb(205, 195, 195);
+            }
+        }
+    }
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.request-container {
+    margin: 2rem 5rem;
+    z-index: 1;
+    border: 2px double black;
+    top: -50%;
+    left: 50%;
+    max-width: 90%;
+    border-radius: 8px;
+    width: 100%;
+    overflow: hidden;
+
+    margin-top: 10rem;
+    width: 100%;
+
+    .request-table {
+        width: 100%;
+        border-collapse: collapse;
+
+        .approove-button {
+            outline: none;
+            background-color: black;
+            color: white;
+            padding: 4px;
+
+            &:hover {
+                background-color: rgb(79, 75, 75);
+            }
+        }
+    }
+
+    th,
+    td {
+        border-bottom: 2px solid #ddd;
+        text-align: left;
+        padding: 0px;
+        height: 5px;
+    }
+}
+
+.configuration {
+    margin-left: 40%;
+    // margin-top: 40%;
+    // z-index: -1;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px black;
+    height: 10rem;
+    width: 20rem;
+}
+
+.admin-header-button {
+    outline: none;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    padding: 6px;
+
+    &:hover {
+        background-color: rgb(122, 118, 118);
+    }
+}
+
+.request-table-header {
+    display: flex;
+    justify-content: space-between;
+
+    .close-button {
+        outline: none;
+        padding: 7px;
+        background-color: black;
+        color: white;
+    }
+}
+
+.menu{
+    float: right;
+}

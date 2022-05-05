@@ -1,0 +1,11 @@
+<main class="container">
+    <section class="half info">
+        <p>{{ description }}</p>
+    </section>
+    <hr />
+    <section class="half img">
+        <div class="image" *ngFor="let info of images; let i = index">
+            <img (click)="showInfo(i)" [src]="info.src" [alt]="info.alt" />
+        </div>
+    </section>
+</main>

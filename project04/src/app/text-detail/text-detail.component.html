@@ -1,0 +1,11 @@
+<div class="main-container">
+    <section class="section1">
+        <p>{{detailsOfText}}</p>
+    </section>
+    <section class="section2">
+        <div class="text" *ngFor="let text of texts, let i= index">
+           <h3 (click)="showDetails(i)">{{text.name}}</h3>
+          
+        </div>
+    </section>
+</div>

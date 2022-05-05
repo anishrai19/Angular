@@ -1,0 +1,17 @@
+<div class="min-h-screen m-0">
+  <app-toolbar></app-toolbar>
+  <div  class="mt-16 flex justify-center items-center h-96">
+<div class="min-w-max" id="chartLine">
+    <canvas
+      baseChart
+      class="h-4/5"
+      [datasets]="lineChartData"
+      [options]="lineChartOptions"
+      [type]="lineChartType"
+      [legend]="lineChartLegend"
+      [labels]="lineChartLabels"
+      [plugins]="lineChartPlugins"
+      class="h-96 min-w-full bg-blue-100"
+    ></canvas>
+  </div>
+  </div>

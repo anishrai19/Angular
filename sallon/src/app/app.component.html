@@ -1,0 +1,130 @@
+<mat-accordion>
+    <mat-expansion-panel color="warn">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Login Form
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <mat-action-row>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Employee Id</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+
+            <button mat-raised-button>Login</button>
+
+        </mat-action-row>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel color="warn">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                FeedBack Form
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>email</mat-label>
+            <input matInput type="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Service By</mat-label>
+            <mat-select>
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+                <mat-option value="two">Third option</mat-option>
+                <mat-option value="two">Fourth option</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+
+
+        <div>
+            <mat-menu #appMenu="matMenu" xPosition="after" yPosition="above">
+                <button mat-menu-item [matMenuTriggerFor]="subMenu1">Service By</button>
+            </mat-menu>
+            <button mat-flat-button [matMenuTriggerFor]="appMenu">Services</button>
+
+            <mat-menu #subMenu1="matMenu">
+
+                <button mat-menu-item>User 1</button>
+                <button mat-menu-item>User 2</button>
+                <button mat-menu-item>User 3</button>
+            </mat-menu>
+
+        </div>
+
+        <span> Service Availed </span>
+        <mat-checkbox> checkbox1 </mat-checkbox>
+        <mat-checkbox> checkbox2 </mat-checkbox>
+        <mat-checkbox> checkbox3 </mat-checkbox>
+        <mat-checkbox> checkbox4 </mat-checkbox>
+
+
+
+        <div>
+            <mat-menu #ratingMenu="matMenu" xPosition="after" yPosition="above">
+                <button mat-menu-item [matMenuTriggerFor]="subMenu01">Ambience Rating</button>
+                <button mat-menu-item [matMenuTriggerFor]="subMenu2">Cleanliness Rating</button>
+                <button mat-menu-item [matMenuTriggerFor]="subMenu3">Service Rating</button>
+                <button mat-menu-item [matMenuTriggerFor]="subMenu4">Overall Rating</button>
+            </mat-menu>
+            <button mat-flat-button [matMenuTriggerFor]="ratingMenu">Rating Services</button>
+
+            <mat-menu #subMenu01="matMenu">
+                <button mat-menu-item> 1</button>
+                <button mat-menu-item> 2</button>
+                <button mat-menu-item> 3</button>
+            </mat-menu>
+
+            <mat-menu #subMenu2="matMenu">
+                <button mat-menu-item>1</button>
+                <button mat-menu-item>2</button>
+                <button mat-menu-item>3</button>
+            </mat-menu>
+            <mat-menu #subMenu3="matMenu">
+                <button mat-menu-item>1</button>
+                <button mat-menu-item>2</button>
+                <button mat-menu-item> 3</button>
+            </mat-menu>
+            <mat-menu #subMenu4="matMenu">
+                <button mat-menu-item> 1</button>
+                <button mat-menu-item> 2</button>
+                <button mat-menu-item>3</button>
+            </mat-menu>
+
+        </div>
+
+        <mat-action-row>
+            <button mat-raised-button>Submit</button>
+
+        </mat-action-row>
+    </mat-expansion-panel>
+
+</mat-accordion>

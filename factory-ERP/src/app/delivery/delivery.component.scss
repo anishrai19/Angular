@@ -1,0 +1,46 @@
+.logout button {
+  float: right;
+}
+.container {
+  margin-top: 20px;
+  height: 30vh;
+  background-color: bisque;
+}
+.po-container {
+  width: 100vw;
+}
+.layout h2 {
+  float: left;
+  display: inline;
+}
+.demo-table {
+  width: 100vw;
+}
+
+.header {
+  width: 100%;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.po-box {
+  background-color: aquamarine;
+  margin-bottom: 5px;
+}
+mat-expansion-panel-header {
+  background-color: rgb(148, 211, 197);
+}
+.section {
+  background-color: aliceblue;
+}
+mat-card {
+  margin-bottom: 10px;
+}
+mat-form-filed {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+.block {
+  background-color: antiquewhite;
+}

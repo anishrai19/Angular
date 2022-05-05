@@ -1,0 +1,11 @@
+<div class="main-container" >
+    <div class="section1">
+        <p>{{detailsOfImage}}</p> 
+    </div>
+    <div class="section2">
+        <div class="image" *ngFor="let detail of details; let i= index" >
+            <img [src]="detail.src" [alt]="detail.alt" (click)="onPress(i)">
+        </div>
+               
+    </div>
+</div>

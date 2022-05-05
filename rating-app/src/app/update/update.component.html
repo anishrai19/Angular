@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="logout">
+    <button mat-raised-button type="submit" color="primary" (click)="logout()">
+      Log-out
+    </button>
+  </div>
+  <main class="main">
+    <div class="box">
+      
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        class="update"
+        fxLayout="column"
+      >
+       <!--  -->
+        
+        <h2 *ngIf="error">{{ error }}</h2>
+        
+        <mat-card>
+          <h1> Update Rating</h1>
+          <mat-form-field appearance="fill" class="mat-form-field">
+            <mat-label>Form ID</mat-label>
+            <input type="text" [value]="id" matInput formControlName="formId" />
+          </mat-form-field>
+          <div class="ratingContainer">
+            <h2>Ratings</h2>
+            <mat-form-field appearance="fill" class="mat-form-field">
+              <mat-label>Logic Rating</mat-label>
+              <input type="number" matInput formControlName="LogicRating" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="mat-form-field">
+              <mat-label>Communication Rating</mat-label>
+              <input
+                type="number"
+                matInput
+                formControlName="CommunicationRating"
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="mat-form-field">
+              <mat-label>Assignment Rating</mat-label>
+              <input
+                type="number"
+                matInput
+                formControlName="AssignmentRating"
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="mat-form-field">
+              <mat-label>ProActiveness Rating</mat-label>
+              <input
+                type="number"
+                matInput
+                formControlName="ProActivenessRating"
+              />
+            </mat-form-field>
+          </div>
+
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            style="margin-top: 1rem"
+            [disabled]="form.invalid"
+          >
+            Submit
+          </button>
+        </mat-card>
+      </form>
+    </div>
+  </main>
+</div>

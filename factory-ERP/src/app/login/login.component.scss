@@ -1,0 +1,31 @@
+.main-box{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  height: 88.5vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(117, 216, 216);
+}
+.login {
+  width: 300px;
+  background-color: rgb(153, 196, 124);
+}
+
+.header {
+  width: 100%;
+  margin-left: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+}
+h2{
+    text-align: center;
+}
+

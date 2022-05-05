@@ -1,0 +1,23 @@
+.main-container{
+    height: 100vh;
+   display: flex;
+   flex: 1;
+   
+}
+
+.text-menu{
+   flex: 1;
+   border-right: 2px solid red;
+   background-color: aquamarine;
+   
+}
+.detail-menu{
+    flex: 2;
+    display: flex;
+    background-color: bisque;
+    padding-left: 20px;
+    font-size: 80px;
+    justify-content: center;
+    align-items: center;
+
+}

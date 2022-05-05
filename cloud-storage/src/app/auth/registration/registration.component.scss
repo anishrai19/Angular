@@ -1,0 +1,77 @@
+.registration{
+    height: 100%;
+    width: 100%;
+    background-color: aliceblue;
+    button{
+        float: right;
+    }
+}
+.main-container {
+    // height: 100%;
+    // width: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 80px;
+    width: 400px;
+    height: 410px;
+    background-color: rgb(119, 167, 167);
+    border: 2px solid green;
+    border-radius: 10%;
+
+}
+
+.form-example {
+    margin-top: 5px;
+}
+
+.form {
+    margin-top: 20px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    margin-left: 100px;
+    // text-align: center;
+}
+
+.login-btn {
+    margin-left: 130px;
+    margin-top: 30px;
+}
+
+.section1 {
+    text-align: center;
+}
+
+input[type=email],input[type=text],
+input[type=password] {
+    width: 80%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #161626;
+
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    // width: 100%;
+}
+p {
+    color: red;
+    margin: 0px 0px;
+}

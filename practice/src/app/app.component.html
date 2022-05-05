@@ -1,0 +1,19 @@
+<div class="setion1">
+<h1 [innerText]="title"></h1>
+<p> {{name}}</p> 
+<p (click)="messageMobileNo()">{{mobileNo}}</p>
+<p>{{message}}</p>
+
+
+<input [(ngModel)]="name1">
+<p>{{name1}}</p>
+
+
+
+<h2>Two-way Binding Example</h2>    
+   <input [(ngModel)]="fullName" /> <br/><br/>    
+<p> {{fullName}} </p>
+
+</div>
+
+<app-first [name]="title" (click)="onclick($event)"></app-first>

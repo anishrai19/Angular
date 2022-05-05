@@ -1,0 +1,172 @@
+<mat-toolbar color="warn" class="header">
+  <span>Furnace Operator</span>
+</mat-toolbar>
+
+<div class="logout">
+  <button mat-raised-button type="submit" color="primary" (click)="logout()">
+    Log-out
+  </button>
+</div>
+
+<!-- <div class="section"> -->
+<mat-toolbar>Manufacturing Status</mat-toolbar>
+<form [formGroup]="manufacturingStatus" class="block">
+  <mat-card *ngFor="let order of poData" class="section">
+    <mat-label>Purchase Order Id- {{ order.PurchaseOrderId }}</mat-label>
+    <br />
+    <br />
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>PO-Id</mat-label>
+      <mat-select required appearance="fill" formControlName="purchaseOrderId">
+        <mat-option [value]="order.PurchaseOrderId">{{
+          order.PurchaseOrderId
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Product-Id</mat-label>
+      <mat-select required appearance="fill" formControlName="productId">
+        <mat-option [value]="order.ProductId" placeholder="">{{
+          order.ProductId
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Furnace-Id</mat-label>
+      <mat-select
+        required
+        appearance="fill"
+        [(value)]="furnace.name"
+        formControlName="furnaceId"
+      >
+        <mat-option
+          *ngFor="let furnace of furnaces"
+          [value]="furnace._id"
+          placeholder=""
+          >{{ furnace.name }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field floatLabel="auto" appearance="standard" color="primary">
+      <mat-label>PostMachining-Weight</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="postMachiningWeight"
+        name="postMachiningWeight"
+      />
+    </mat-form-field>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button type="submit" (click)="updateStatus()">
+        Production Done
+      </button>
+      <button
+        mat-raised-button
+        type="submit"
+        [disabled]="manufacturingStatus.invalid"
+        (click)="onSubmit(order.PurchaseOrderId)"
+      >
+        Update Product Status
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<!-- <mat-accordion multi>
+  <form [formGroup]="manufacturingStatus">
+    <mat-expansion-panel *ngFor="let order of poData">
+      <mat-expansion-panel-header>
+        <mat-panel-title> PO_Id </mat-panel-title>
+        <mat-panel-description>
+          {{ order.PurchaseOrderId }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field appearance="fill">
+        <mat-label>PO_Id</mat-label>
+        <mat-select
+          required
+          appearance="fill"
+          formControlName="purchaseOrderId"
+        >
+          <mat-option [value]="order.PurchaseOrderId">{{
+            order.PurchaseOrderId
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Product_Id</mat-label>
+        <mat-select required appearance="fill" formControlName="productId">
+          <mat-option [value]="order.ProductId" placeholder="">{{
+            order.ProductId
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Furnace_Id</mat-label>
+        <mat-select
+          required
+          appearance="fill"
+          [(value)]="furnace.name"
+          formControlName="furnaceId"
+        >
+          <mat-option
+            *ngFor="let furnace of furnaces"
+            [value]="furnace._id"
+            placeholder=""
+            >{{ furnace.name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field floatLabel="auto" appearance="standard" color="primary">
+        <mat-label>PostMachining_Weight</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="postMachiningWeight"
+          name="postMachiningWeight"
+        />
+      </mat-form-field>
+      <button mat-raised-button type="submit" (click)="updateStatus()">
+        Manufactured
+      </button>
+      
+      <button
+        mat-raised-button
+        type="submit"
+        (click)="onSubmit(order.PurchaseOrderId)"
+      >
+        Update Status
+      </button>
+    </mat-expansion-panel>
+  </form>
+</mat-accordion> -->
+
+<!-- <mat-card  class="po-box" *ngFor=" let product of products,let i=index ">
+  <mat-card-title>PO-Id-{{product.PurchaseOrderId}}</mat-card-title>
+  <mat-card-subtitle>Product Items</mat-card-subtitle>
+      <form class="login-form" fxLayout="column" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>Employee ID</mat-label>
+            <input matInput type="text" placeholder="xyz" formControlName="employeeId">
+        </mat-form-field>
+
+        
+    
+        <mat-form-field >
+            <mat-label>PassWord</mat-label>
+            <input matInput placeholder="abc@123" formControlName="password">
+        </mat-form-field>
+        <button mat-raised-button type="submit" >Login</button>
+    </form>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button>Manufactured</button>
+    <button mat-raised-button>Update Status</button>
+  </mat-card-actions>
+</mat-card> -->
+<!-- </div> -->

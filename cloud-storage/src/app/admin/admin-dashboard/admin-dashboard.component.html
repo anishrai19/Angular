@@ -1,0 +1,87 @@
+<div class="admin-header-container">
+  <div class="admin-header">
+    <div>
+    </div>
+
+    <div>
+      <button (click)="viewPendingRequest()" class="admin-header-button">
+        Pending Request
+      </button>
+      <button (click)="logout()" class="admin-header-button">
+        log out
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="pendingRequestModal" class="request-container">
+    <div class="request-table-header">
+      <button class="close-button" (click)="closePendingRequestModal()">
+        <i class="fa fa-close"></i>
+      </button>
+    </div>
+    <table class="request-table">
+      <tr>
+        <th>User-Email</th>
+        <th>New Config</th>
+        <th>Status</th>
+        <th>update</th>
+      </tr>
+      <tr *ngFor="let request of pendingRequest">
+        <td>{{ request.userEmail }}</td>
+        <td>
+          <span>max file - {{ request.requestedMaxNumberOfFiles }}</span>
+          <span> , max file size - {{ request.requestedMaxSizeOfFiles }}</span>
+        </td>
+        <td>
+          <p>{{ request.status }}</p>
+        </td>
+        <td>
+          <button
+            (click)="approoveRequest(request.userEmail,request.requestedMaxSizeOfFiles,request.requestedMaxSizeOfFiles)"
+            class="approove-button"
+          >
+            Approve
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<table class="table">
+  <caption class="table__caption">
+    USER STORAGE INFO TABLE
+  </caption>
+  <tr class="table__head-row">
+    <th>Name</th>
+    <th>No. of files</th>
+    <th>configuration</th>
+  </tr>
+
+  <tr *ngFor="let user of users">
+    <td>{{ user.name }}</td>
+    <td>{{ user.totalFiles }}</td>
+    <button
+      style="width: 10%"
+      class="table__data-row__arrow-button"
+      (click)="showConfiguration(user.email)"
+    > <span>&#8594;</span>
+      <!-- <i class="fa-solid fa-arrow-right"></i> -->
+    </button>
+  </tr>
+</table>
+
+
+<div *ngIf="configuration" class="configuration">
+   <button class="close-button" (click)="closeConfiguration()">
+        <i class="fa fa-close"></i>
+      </button>
+  <ul >
+       <li>Total Files-<span>{{userDetails.totalFiles}}</span></li>
+       <li>Total Size-<span>{{userDetails.totalSize}}</span></li>
+      <li>Max No. of Files-<span> {{userDetails.maxNumberOfFiles}} </span></li>
+      <li>Max Storage Size-<span> {{userDetails.maxStorageSize}} </span></li>
+    </ul>
+</div>
+
+

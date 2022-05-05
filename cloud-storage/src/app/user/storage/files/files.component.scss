@@ -1,0 +1,40 @@
+body{
+    width: 100%;
+
+}
+.container{
+    height: 80%;
+}
+.folder{
+    display: flex;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.nav-bar{
+    background-color: rgb(205, 235, 235);
+    height: 40px;
+}
+
+.nav-bar h2{
+    text-align: center;
+}
+
+// .folder-section{
+//     margin-top: 50px;
+// }

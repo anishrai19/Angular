@@ -1,0 +1,22 @@
+<div class="container">
+<nav class="nav-bar">
+  <h2>File Storege</h2>
+</nav>
+<section class="folder-section"> 
+<table>
+  <tr>
+    <th>File Name</th>
+    <th>Download</th>
+    <th>Delete</th>
+    
+  </tr>
+  <tr *ngFor="let file of files">
+    <td class="folder" ><i class="fa fa-file"></i>{{ file.fileName }}</td>
+    <td class="download" ><i class="fa fa-download" (click)="downloadFile(file.fileUrl,file.fileName)"></i></td>
+    <td  class="delete"><i class="fa fa-trash" (click)="deleteFile(file.fileName)"></i></td>
+  </tr>
+  
+</table>
+
+</section>
+</div>

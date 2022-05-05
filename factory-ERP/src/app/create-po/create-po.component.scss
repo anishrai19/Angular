@@ -1,0 +1,69 @@
+.main-container{
+background-color: rgb(117, 216, 216);
+// width: 100vw;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.employeeForm {
+  margin-top: 10px;
+  width: 350px;
+  background-color: rgb(217, 223, 168);
+  
+}
+
+.checkbox{
+  display: flex;
+}
+mat-checkbox{
+  padding: 5px;
+}
+
+mat-radio-button{
+  padding: 2px;
+ 
+}
+
+mat-radio-group{
+  margin-top: 0px;
+}
+.radio h3{
+  margin-bottom: 0px;
+}
+
+
+.header {
+  // width: 100vw;
+   margin-left: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.employeeForm{
+  margin-bottom: 50px;
+}
+.logout{
+    float: right;
+    display: block;
+}
+
+// .demo-table{
+//     width: 100vw;
+// }
+.container2{
+   height: 100vh;
+  width: 100vw;
+}
+.Product{
+    padding-left: 10px;
+    background-color: rgb(199, 192, 150);
+}
+h2{
+  text-align: center;
+}

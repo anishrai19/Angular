@@ -1,0 +1,26 @@
+<div class="main-section">
+    <section class="allLeaves">
+        <h2>All Leaves</h2>
+        <div class="leaves" *ngFor="let leave of leaves,let i=index">
+           <p>{{leave.day}}  {{leave.name}}  {{leave.date}}</p>
+           <button (click)="addToFloater(i)">F</button>
+           <button (click)="addToPlanned(i)">P</button>
+        </div>
+    </section>
+    <section class="floaterLeaves" >
+        <h2>Floater Leaves</h2>
+        <div >
+        <p>{{fday}} {{fname}} {{fdate}}</p>
+        <!-- <button (click)="addToAllLeavesF(i)">A</button>
+        <button (click)="addToPlanned(i)">P</button> -->
+        </div>
+    </section>
+    <section class="plannedLeaves" >
+        <h2>Planned Leaves</h2>
+        <div >
+        <p>{{pday}} {{pname}} {{pdate}}</p>
+        <!-- <button (click)="addToAllLeavesP(i)">A</button>
+        <button (click)="addToFloater(i)">F</button> -->
+        </div>
+    </section>
+</div>

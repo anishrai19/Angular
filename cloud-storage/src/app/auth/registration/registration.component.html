@@ -1,0 +1,47 @@
+ <div class="registration">
+      <button (click)="logout()" class="admin-header-button">
+        log out
+      </button>
+  
+<div class="main-container">
+   
+  <div class="container">
+
+    <form action="" method="get" class="form-example form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h3>Registration </h3>
+      <div class="form-example">
+        <label for="name">Enter Name: </label>
+        <input type="text" name="name" id="name" placeholder="abc" formControlName="name" />
+         <p
+         *ngIf="name && name.invalid && name.touched"
+         class="form__form-field__validator" >
+         *name is required
+        </p>
+      </div>
+      <div class="form-example">
+        <label for="email">Enter Email-id: </label>
+        <input type="email" name="email" id="email" placeholder="abc@gmail.com" formControlName="email" />
+         <p
+         *ngIf="email && email.invalid && email.touched"
+          class="form__form-field__validator"
+        >
+          *Enter Valid Email
+    </p>
+      </div>
+      <div class="form-example">
+        <label for="password">Enter Password: </label>
+        <input type="password" name="password" id="password" placeholder="abc@123" formControlName="password"  />
+          <p
+         *ngIf="password && password.invalid && password.touched"
+          class="form__form-field__validator"
+        >
+          *Enter minimum 5 digit password
+    </p>
+      </div>
+      <div class="login-btn">
+        <input type="submit" value="Register" [disabled]="form.invalid">
+      </div>
+    </form>
+  </div>
+</div>
+</div>

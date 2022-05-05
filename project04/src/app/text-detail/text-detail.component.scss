@@ -1,0 +1,14 @@
+.main-container{
+    height: 100vh;
+    background-color:orange;
+    display: flex;
+    flex: 1;
+}
+.section1{
+    flex: 1;
+    border-right: 2px double red;
+}
+.section2{
+    flex: 1;
+    margin-left: 20px;
+}

@@ -1,0 +1,51 @@
+<div>
+<mat-toolbar color="warn" class="header">
+  <span>Payment</span>
+</mat-toolbar>
+
+<div class="logout">
+  <button mat-raised-button type="submit" color="primary" (click)="logout()">
+    Log-out
+  </button>
+</div>
+
+<mat-toolbar>Payment Status</mat-toolbar>
+<form [formGroup]="paymentStatus" class="block">
+  <mat-card *ngFor="let order of poData" class="section">
+    <mat-label>Purchase Order Id- {{order._id}}</mat-label>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>PO-Id</mat-label>
+      <mat-select required appearance="fill" formControlName="purchaseOrderId">
+        <mat-option [value]="order._id">{{order._id}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+   
+    <mat-form-field appearance="fill" >
+      <mat-label>Change Status</mat-label>
+      <mat-select required appearance="fill"
+       formControlName="status">
+        <mat-option 
+          *ngFor="let state of status"
+          [value]="state.name"
+          placeholder=""
+          >{{ state.name }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    
+    
+    <mat-card-actions align="end">
+ 
+    <button
+      mat-raised-button
+      type="submit"
+      (click)="onSubmit()"
+    >
+      Update Status
+    </button>
+    </mat-card-actions>
+    
+  </mat-card>
+  </form>
+  </div>

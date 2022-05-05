@@ -1,0 +1,40 @@
+<div class="container">
+  <mat-card class="login">
+    <h2>Login</h2>
+    <!-- <mat-toolbar color="primary"></mat-toolbar> -->
+    <form
+      class="login-form"
+      fxLayout="column"
+      [formGroup]="form"
+      (ngSubmit)="onLogin()"
+    >
+      <mat-form-field>
+        <mat-label>Employee ID</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="xyz"
+          formControlName="employeeId"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>PassWord</mat-label>
+        <input
+          matInput
+          placeholder="abc@123"
+          formControlName="password"
+          type="password"
+        />
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Login
+      </button>
+    </form>
+  </mat-card>
+</div>

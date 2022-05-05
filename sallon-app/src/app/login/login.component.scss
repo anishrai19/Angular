@@ -1,0 +1,22 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(117, 216, 216);
+}
+.login {
+  
+  width: 300px;
+  background-color: rgb(217, 223, 168);
+  
+}
+
+.header {
+  width: 100vw;
+   margin-left: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

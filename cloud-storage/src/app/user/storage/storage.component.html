@@ -1,0 +1,112 @@
+<app-bar-menu (driveAction)="onOpenModal($event)"></app-bar-menu>
+<app-formate
+  *ngIf="folderModalOpen"
+  (modalClose)="onCloseModal('folder')"
+  [open]="folderModalOpen"
+  [formateHeader]="modalHeader"
+>
+  <form
+    [formGroup]="folderForm"
+    class="formate-form"
+    (ngSubmit)="onFolderFormSubmit()"
+  >
+    <input
+      type="text"
+      placeholder="Folder Name"
+      class="formate-form__input"
+      formControlName="folderName"
+    />
+
+    <button
+      type="submit"
+      class="formate-form__button"
+      [disabled]="folderForm.invalid"
+    >
+      Create
+    </button>
+  </form>
+</app-formate>
+
+<app-formate
+  *ngIf="fileModalOpen"
+  (modalClose)="onCloseModal('file')"
+  [open]="fileModalOpen"
+  [formateHeader]="modalHeader"
+>
+  <form [formGroup]="fileForm" class="modal-form" (ngSubmit)="onFileSubmit()">
+    <select class="formate-form__input" formControlName="folderName">
+      <option *ngFor="let folder of folders" [value]="folder">
+        {{ folder }}
+      </option>
+    </select>
+    <input
+      type="file"
+      id="file-id"
+      placeholder="File"
+      class="formate-form__input"
+      formControlName="fileName"
+      (change)="onFileSelected($event)"
+    />
+
+    <div class="file-upload">
+      {{ fileName || "Please upload a files." }}
+      <button
+        type="submit"
+        class="formate-form__button"
+        [disabled]="fileForm.invalid"
+      >
+        Add
+      </button>
+    </div>
+  </form>
+</app-formate>
+
+<app-formate
+  *ngIf="configOpen"
+  (modalClose)="onCloseModal('config')"
+  [open]="configOpen"
+  [formateHeader]="modalHeader"
+>
+  <form
+    [formGroup]="configForm"
+    class="formate-form"
+    (ngSubmit)="onConfigFormSubmit()"
+  >
+    <input
+      type="number"
+      placeholder="Request Max No. of File"
+      class="formate-form__input"
+      formControlName="requestedMaxNumberOfFiles"
+    />
+
+    <input
+      type="number"
+      placeholder="Request Max Files size"
+      class="formate-form__input"
+      formControlName="requestedMaxSizeOfFiles"
+    />
+
+    <button
+      type="submit"
+      class="formate-form__button"
+      [disabled]="configForm.invalid"
+    >
+      Send
+    </button>
+  </form>
+</app-formate>
+
+<section class="folder-section">
+  <div
+    class="folder"
+    *ngFor="let folder of folders; let i = index"
+    (dblclick)="getAllFiles(folder)"
+    (contextmenu)="onRightClick(i)"
+  >
+    <div *ngIf="i === deleteIndex">
+      <button *ngIf="delete" (click)="deleteFolder(folder)">delete</button>
+    </div>
+    <i class="fa fa-folder"></i>
+    <p class="folder__label">{{ folder }}</p>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+<div class="modal" [ngClass]="{ 'modal--open': open }">
+  <div class="modal__header">
+    <h3>{{ formateHeader }}</h3>
+    <button (click)="onFormateClose()"><i class="fa fa-close"></i></button>
+  </div>
+  <div class="modal__content">
+    <ng-content></ng-content>
+  </div>
+</div>

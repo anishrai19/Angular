@@ -1,0 +1,66 @@
+<mat-toolbar color="warn" class="header">
+  <span>Delivery Status</span>
+</mat-toolbar>
+
+<div class="logout">
+  <button mat-raised-button type="submit" color="primary" (click)="logout()">
+    Log-out
+  </button>
+</div>
+
+<!-- <div class="section"> -->
+<mat-toolbar> PO Status</mat-toolbar>
+<form [formGroup]="manufacturingStatus" class="block">
+  <mat-card *ngFor="let order of poData" class="section">
+    <mat-label>Purchase Order Id- {{ order.purchaseOrderId }}</mat-label>
+    <br />
+    <br />
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>PO-Id</mat-label>
+      <mat-select required appearance="fill" formControlName="purchaseOrderId">
+        <mat-option [value]="order.purchaseOrderId">{{
+          order.purchaseOrderId
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Delivery Remark</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Delivery Remark"
+        formControlName="deliveryRemark"
+      />
+      <!-- <mat-select required appearance="fill" formControlName="productId">
+        <mat-option [value]="order.ProductId" placeholder="">{{
+          order.ProductId
+        }}</mat-option>
+      </mat-select> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Delivery Status </mat-label>
+      <mat-select
+        required
+        appearance="fill"
+        formControlName="deliveryStatus"
+      >
+        <mat-option
+          *ngFor="let furnace of deliveryStatus"
+          [value]="furnace.name"
+          placeholder=""
+        >
+          {{ furnace.name }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
+    <mat-card-actions align="end">
+     
+      <button mat-raised-button type="submit" [disabled]="manufacturingStatus.invalid" (click)="onSubmit()">
+        Update Delivery Status
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

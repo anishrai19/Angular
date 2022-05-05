@@ -1,0 +1,47 @@
+.red{
+    background: rgb(240, 7, 7);
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+
+.white{
+    background-color: white;
+}
+
+body{
+    display: flex;
+}
+// .main_container{
+    
+//     display: flex;
+//      align-items: center;
+//     justify-content: center;
+// }
+.main_box{
+    height: 50px;
+    width: 50px;
+    // background-color: aquamarine;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid red;
+
+}
+.container{
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.child_container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

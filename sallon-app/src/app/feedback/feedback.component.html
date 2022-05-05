@@ -1,0 +1,122 @@
+<mat-toolbar color="warn" class="header">
+  <span>FeedBack Form</span>
+</mat-toolbar>
+
+<div class="container">
+  <mat-card class="feedback">
+    <h2>FeedBack Form</h2>
+    <!-- <mat-toolbar color="primary"></mat-toolbar> -->
+    <form
+      class="feedback-form"
+      fxLayout="column"
+      [formGroup]="feedbackForm"
+      (ngSubmit)="onSubmitForm()"
+    >
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="xyz" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput type="number" placeholder="23" formControlName="age" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="xyz"
+          type="email"
+          formControlName="email"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Service By</mat-label>
+        <mat-select formControlName="serviceBy" >
+          <mat-option *ngFor="let serviceb of serviceby" [value]="serviceb._id">
+            {{ serviceb.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+     
+        <mat-form-field>
+          <mat-label>Service Availed</mat-label>
+         <mat-select multiple required appearance="fill" formControlName="servicesAvailed">
+            <mat-option
+              *ngFor="let service of services"
+              [value]="service._id"
+              >{{ service.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+     
+
+
+      <div class="radio">
+        <h3>How did you like our Ambience</h3>
+        <mat-radio-group formControlName="ambienceRating">
+          <mat-radio-button
+            *ngFor="let rating of ratings"
+            [value]="rating.value"
+          >
+            {{ rating.value }}</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+
+      <div class="radio">
+        <h3>How did you like our Cleanliness</h3>
+        <mat-radio-group formControlName="cleanlinessRating">
+          <mat-radio-button
+            *ngFor="let rating of ratings"
+            [value]="rating.value"
+          >
+            {{ rating.value }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="radio">
+        <h3>How much you like our  Service</h3>
+        <mat-radio-group formControlName="serviceRating">
+          <mat-radio-button
+            *ngFor="let rating of ratings"
+            [value]="rating.value"
+          >
+            {{ rating.value }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="radio">
+        <h3>How did you like our Overall experience Service</h3>
+        <mat-radio-group formControlName="overallRating">
+          <mat-radio-button
+            *ngFor="let rating of ratings"
+            [value]="rating.value"
+          >
+            {{ rating.value }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="comment">
+        <h3>Comments</h3>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Leave a comment</mat-label>
+          <textarea
+            matInput
+            placeholder="Please Leave a Comment"
+            [(ngModel)]="post"
+            formControlName="comments"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button type="submit">
+        Submit
+      </button>
+    </form>
+  </mat-card>
+</div>

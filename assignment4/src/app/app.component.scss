@@ -1,0 +1,77 @@
+
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-text{
+    display: inline;
+    margin: 0;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 10px;
+}
+ 
+.list ul li button{
+    position: absolute;
+    right: 0%;
+    top: 8%;
+    background: #f48478;
+    color: #789738 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 0.5rem;
+    display: inline-block;
+    border: none;
+
+}
+
+.add-btn{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #f20983;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 0.4rem;
+    display: inline-block;
+    border: none;
+}
+
+.app-title{
+    text-align: center;
+    color: rgb(228, 114, 114);
+    font-size: 50px;
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+.list ul li {
+    position: relative;
+    background-color: #ddcdcb;
+    color: #000000;
+    line-height: 20px;
+    text-decoration: none;
+    border-bottom-width: 1px;
+    border-bottom-color: #cccccc;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+.container{
+    color: #fff;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+

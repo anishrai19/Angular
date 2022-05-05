@@ -1,0 +1,54 @@
+<div>
+<mat-toolbar color="warn" class="header">
+  <span>Storage</span>
+</mat-toolbar>
+
+<div class="logout">
+  <button mat-raised-button type="submit" color="primary" (click)="logout()">
+    Log-out
+  </button>
+</div>
+
+<mat-toolbar>Storage Status</mat-toolbar>
+<form [formGroup]="storageStatus" class="block">
+  <mat-card *ngFor="let order of poData" class="section">
+    <mat-label>Purchase Order Id- {{order._id}}</mat-label>
+    <br>
+    <br>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>PO-Id</mat-label>
+      <mat-select required appearance="fill" formControlName="purchaseOrderId">
+        <mat-option [value]="order._id">{{order._id}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+   
+    <mat-form-field appearance="fill">
+      <mat-label>Rack-Number</mat-label>
+      <mat-select multiple required appearance="fill"
+       formControlName="storageRackIds">
+        <mat-option 
+          *ngFor="let furnace of furnaces"
+          [value]="furnace._id"
+          placeholder=""
+          >{{ furnace.rackNumber }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    
+    
+    <mat-card-actions align="end">
+ 
+    <button
+      mat-raised-button
+      type="submit"
+      (click)="onSubmit()"
+      [disabled]="storageStatus.invalid"
+    >
+      Store
+    </button>
+    </mat-card-actions>
+    
+  </mat-card>
+  </form>
+  </div>

@@ -1,0 +1,37 @@
+button{
+    margin-right: 50px;
+}
+div{
+    margin-left: 30px;
+}
+.navbar span{
+    // display: flex;
+    // justify-content: end;
+    // text-align: end;
+
+    padding: 10px;
+}
+.mat-sidenav-container{
+    background-color: aliceblue;
+}
+
+mat-grid-tile{
+    background-color: aquamarine;
+}
+
+table {
+  width: 100%;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid maroon;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 400px;
+}

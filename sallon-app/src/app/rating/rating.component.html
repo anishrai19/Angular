@@ -1,0 +1,68 @@
+<div>
+  <mat-toolbar color="warn" class="header">
+    <span>Rating Report</span>
+  </mat-toolbar>
+</div>
+
+<div>
+  <!-- <section class="section1">
+     <mat-grid-list cols="3" rowHeight="300px" gutterSize="10px">
+     <mat-grid-tile> All Rating </mat-grid-tile>
+     </mat-grid-list>
+    </section>
+    
+  <section class="section2">
+    <mat-grid-list cols="4" rowHeight="300px" gutterSize="10px">
+    <mat-grid-tile>Ambience Rating</mat-grid-tile>
+    <mat-grid-tile>Cleanliness Rating</mat-grid-tile>
+    <mat-grid-tile>Service Rating</mat-grid-tile>
+    <mat-grid-tile>Overall Rating </mat-grid-tile>
+    </mat-grid-list>
+   </section> -->
+
+  <section class="section1">
+    <mat-card>
+      <mat-card-title>All Average Rating</mat-card-title>
+      <br />
+      <mat-card-subtitle>Rating - </mat-card-subtitle>
+      <!-- <mat-card-content>{{rating[0].overallAverage}}/ 5</mat-card-content> -->
+      <mat-card-content>{{ rating[0].overallAverage}}/ 5</mat-card-content>
+    </mat-card>
+  </section>
+
+  <section class="section2">
+    <mat-card>
+      <mat-card-title>Ambience Rating</mat-card-title>
+      <br />
+      <mat-card-subtitle>Rating - </mat-card-subtitle>
+      <mat-card-content>
+        {{ rating[0].averageAmbienceRating }}/ 5</mat-card-content
+      >
+    </mat-card>
+    <mat-card>
+      <mat-card-title>Cleanliness Rating</mat-card-title>
+      <br />
+      <mat-card-subtitle>Rating - </mat-card-subtitle>
+      <mat-card-content
+        >{{ rating[0].averageCleanlinessRating }} / 5</mat-card-content
+      >
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>Service Rating</mat-card-title>
+      <br />
+      <mat-card-subtitle>Rating - </mat-card-subtitle>
+      <mat-card-content
+        >{{ rating[0].averageServiceRating }} / 5</mat-card-content
+      >
+    </mat-card>
+    <mat-card>
+      <mat-card-title>Overall Rating</mat-card-title>
+      <br />
+      <mat-card-subtitle>Rating - </mat-card-subtitle>
+      <mat-card-content>
+        {{ rating[0].averageOverallRating }} / 5</mat-card-content
+      >
+    </mat-card>
+  </section>
+</div>

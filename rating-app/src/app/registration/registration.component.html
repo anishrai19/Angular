@@ -1,0 +1,50 @@
+<div class="container">
+<div class="create-emp">
+    <button mat-raised-button type="submit" color="primary" routerLink="/rating-form"> Rating Form </button>
+    <button mat-raised-button type="submit" color="primary" routerLink="/rating-record"> Rating Record </button>
+    <div class="logout">
+    <button mat-raised-button type="submit" color="primary" (click)="logout()">
+      Log-out
+    </button>
+  </div>
+    </div>
+    
+<main class="mainContainer">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mainForm">
+    <mat-card class="mainCard">
+      <h2 class="form-title">Registration Form</h2>
+
+      <mat-form-field appearance="fill" class="mat-form-field">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="name" />
+      </mat-form-field>
+
+      
+
+      <mat-form-field appearance="fill" class="mat-form-field">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="mat-form-field">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role" name="role">
+          <mat-option *ngFor="let track of roles" [value]="track._id">{{
+            track.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        style="margin-top: 1rem"
+        [disabled]="form.invalid"
+      >
+        Submit
+      </button>
+    </mat-card>
+  </form>
+</main>
+</div>

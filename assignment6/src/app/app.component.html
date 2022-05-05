@@ -1,0 +1,11 @@
+<app-new-component-demo
+[value]="valueB"
+label="incrementB"
+(clicked)="incrementC()"
+></app-new-component-demo>
+
+<app-new-component-demo 
+[value]="valueC"
+label="incrementC"
+(clicked)="incrementB()"
+></app-new-component-demo>

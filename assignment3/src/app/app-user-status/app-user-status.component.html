@@ -1,0 +1,8 @@
+<div class="Section" 
+[ngClass]="{red:!user.isActive,green:user.isActive}" 
+*ngFor="let user of users; let i= index"
+    (click)="changeState(i)">
+
+    <p>{{user.name}}</p>
+
+</div>

@@ -1,0 +1,36 @@
+<div class="main-container">
+  <div class="container">
+
+    <form class="form-example form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h3>Login</h3>
+      <div class="form-example">
+        <label for="email">Enter Email-id: </label>
+        <input type="email" name="email" id="email" placeholder="abc@gmail.com" formControlName="email">
+         <p
+         *ngIf="email && email.invalid && email.touched"
+          class="form__form-field__validator"
+        >
+          *Enter Valid Email
+    </p>
+      </div>
+      <div class="form-example">
+        <label for="password">Enter Password: </label>
+        <input type="password" name="password" id="password" placeholder="abc@123"  formControlName="password">
+         <p
+         *ngIf="password && password.invalid && password.touched"
+          class="form__form-field__validator"
+        >
+          *Enter Valid Password
+    </p>
+      </div>
+      <div class="login-btn">
+        <input type="submit" value="Login" [disabled]="form.invalid">
+      </div>
+      <div class="section1">
+          <a (click)="gotoForgetPassword()">Forget Password</a><br>
+          <a (click)="gotoRegistration()">Create New User</a>
+          
+      </div>
+    </form>
+  </div>
+</div>

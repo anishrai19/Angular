@@ -1,0 +1,89 @@
+<div class="flex justify-between min-w-screen bg-gray-300">
+  <div class="m-2">
+    <div
+      class="flex-1 justify-center items-center font-extrabold p-2 text-2xl mt-4"
+    >
+      Task Tracker
+    </div>
+  </div>
+  <div class="flex justify-end mr-4 mt-4">
+    <button
+      class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow m-4"
+      (click)="logout()"
+    >
+      Logout
+    </button>
+  </div>
+</div>
+
+<div class="flex justify-start w-full m-2">
+  <form [formGroup]="filterForm" (ngSubmit)="onClick()">
+    <section class="w-full m-2">
+      <div class="inline">
+        <label for="year" class="">Select Year :-</label>
+        <input
+          type="number"
+          formControlName="year"
+          class="w-32 px-4 py-2 m-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
+        />
+        <p *ngIf="year && year.invalid && year.touched" class="text-red-700">
+          *Year is required
+        </p>
+      </div>
+      <input
+        type="submit"
+        value="Submit"
+        class="hover:bg-teal text-black font-bold py-2 px-4 disabled:opacity-25 focus:ring-4 rounded bg-blue-400 dark:focus:ring-blue-400"
+        [disabled]="filterForm.invalid"
+      />
+    </section>
+  </form>
+</div>
+
+<!-- Main  Container -->
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <tr
+      class="text-xs text-gray-700 bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
+    >
+      <th scope="col" class="px-6 py-3">User Name</th>
+      <th scope="col" class="px-6 py-3">Status</th>
+      <th scope="col" class="px-6 py-3">Block/Unblock</th>
+      <th scope="col" class="px-6 py-3">Update</th>
+    </tr>
+    <tbody>
+      <tr
+        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+        *ngFor="let user of users"
+      >
+        <td
+          scope="row"
+          class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+        >
+          {{ user.name }}
+        </td>
+        <td class="px-6 py-4">{{ user.status }}</td>
+        <td class="px-6 py-4">
+          <p *ngIf="user.isUserBlocked === true">Blocked</p>
+          <p *ngIf="user.isUserBlocked === false">Active</p>
+        </td>
+        <td class="px-6 py-4">
+          <button
+            *ngIf="user.isUserBlocked === false"
+            (click)="onBlockUnblock(user._id)"
+            class="text-white bg-red-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          >
+            Block
+          </button>
+          <button
+            *ngIf="user.isUserBlocked === true"
+            (click)="onBlockUnblock(user._id)"
+            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          >
+            Unblock
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

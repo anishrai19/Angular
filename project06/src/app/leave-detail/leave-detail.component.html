@@ -1,0 +1,12 @@
+<div class="main-section">
+    <section class="section1">
+        <p>{{detailsOfImage}}</p>
+    </section>
+
+    <section class="section1">
+        <div *ngFor="let detail of details, let i=index">
+            <img [src]="detail.src" [alt]="detail.alt" (click)='onClickInformation(i)'>
+        </div>
+    </section>
+
+</div>

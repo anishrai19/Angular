@@ -1,0 +1,29 @@
+.main-section {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(209, 149, 69);
+  display: flex;
+  flex: 1;
+}
+.allLeaves {
+  flex: 1;
+  background-color: rgb(75, 202, 37);
+  border-right: 2px solid red;
+}
+.floaterLeaves {
+  flex: 1;
+  background-color: rgb(20, 228, 158);
+  border-right: 2px solid red;
+}
+.plannedLeaves {
+  flex: 1;
+  background-color: rgb(255, 196, 219);
+}
+
+.leaves {
+  display: flex;
+}
+button {
+  height: 25px;
+  margin: 2px 9px;
+}

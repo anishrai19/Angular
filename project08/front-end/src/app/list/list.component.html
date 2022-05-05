@@ -1,0 +1,5 @@
+<app-item
+ [Data]="detail"
+  *ngFor="let detail of details;let i=index" 
+  (click)="onClick(i)"
+  ></app-item>
